@@ -1,0 +1,7 @@
+[
+  { "id": "gapdh",    "name": "GAPDH",     "kDa": 37,  "commonControl": true  },
+  { "id": "bactin",   "name": "β-Actin",   "kDa": 42,  "commonControl": true  },
+  { "id": "egfr",     "name": "EGFR",      "kDa": 134, "commonControl": false },
+  { "id": "p53",      "name": "p53",       "kDa": 53,  "commonControl": false },
+  { "id": "vinculin", "name": "Vinculin",  "kDa": 124, "commonControl": false }
+]

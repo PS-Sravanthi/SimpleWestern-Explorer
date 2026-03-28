@@ -1,0 +1,17 @@
+{
+  "traditional": [
+    { "step": 1, "name": "Sample Preparation",           "duration": "30 min",    "manual": true,  "painPoint": false },
+    { "step": 2, "name": "Gel Electrophoresis",          "duration": "90 min",    "manual": true,  "painPoint": true  },
+    { "step": 3, "name": "Membrane Transfer",            "duration": "60-120 min","manual": true,  "painPoint": true  },
+    { "step": 4, "name": "Blocking",                     "duration": "60 min",    "manual": true,  "painPoint": false },
+    { "step": 5, "name": "Primary Antibody Incubation",  "duration": "12 hrs",    "manual": true,  "painPoint": true  },
+    { "step": 6, "name": "Secondary Antibody Incubation","duration": "60 min",    "manual": true,  "painPoint": false },
+    { "step": 7, "name": "Detection & Imaging",          "duration": "30 min",    "manual": true,  "painPoint": false }
+  ],
+  "simpleWestern": [
+    { "step": 1, "name": "Sample Preparation",                  "duration": "30 min",    "manual": true,  "painPoint": false },
+    { "step": 2, "name": "Load Plate & Insert Cartridge",       "duration": "15 min",    "manual": true,  "painPoint": false },
+    { "step": 3, "name": "Automated Run (walk away)",           "duration": "2.5-3 hrs", "manual": false, "painPoint": false },
+    { "step": 4, "name": "Review Digital Results in Compass",   "duration": "15 min",    "manual": false, "painPoint": false }
+  ]
+}
