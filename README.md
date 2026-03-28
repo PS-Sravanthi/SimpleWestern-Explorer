@@ -1,73 +1,47 @@
-# React + TypeScript + Vite
+# Simple Western Explorer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+An interactive React + TypeScript SPA that demonstrates the advantages of Bio-Techne's Simple Western platform (Jess/Abby) compared to traditional Western blotting.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Interactive Experiment Simulator** — configure sample type, target protein, detection method, concentration, and number of samples, then click "Run Simulation" to see results update live
+- **Traditional Western Blot Panel** — SVG gel visualization with ladder bands, noise artifacts, and protocol step breakdown highlighting pain points
+- **Simple Western Panel** — electropherogram chart (Chart.js) with Gaussian peaks, digital lane view, and streamlined 4-step protocol
+- **Workflow Comparison** — side-by-side step stepper with hover tooltips comparing both workflows
+- **CTA Bar** — "Request a Demo" / "Contact Sales" / "Learn More" buttons with modal stubs
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- [Vite](https://vitejs.dev/) + [React](https://react.dev/) + [TypeScript](https://www.typescriptlang.org/)
+- [Tailwind CSS v3](https://tailwindcss.com/)
+- [Chart.js](https://www.chartjs.org/) + [react-chartjs-2](https://react-chartjs-2.js.org/)
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Build
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+```bash
+npm run build
+```
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Project Structure
+
+```
+src/
+  components/
+    ExperimentSetupPanel.tsx   # Controls panel
+    TraditionalBlotPanel/      # Gel SVG + protocol steps
+    SimpleWesternPanel/        # Electropherogram + digital lane + steps
+    WorkflowComparison.tsx     # Side-by-side stepper
+    TopNav.tsx                 # Sticky navigation
+    CTABar.tsx                 # Call-to-action section
+  data/                        # JSON datasets (proteins, protocols, sample types)
+  hooks/useSimulation.ts       # Simulation state management
+  types/index.ts               # Shared TypeScript interfaces
+  utils/                       # gelRenderer, electropherogram, analytics
 ```
