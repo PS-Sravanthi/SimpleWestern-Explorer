@@ -1,0 +1,5 @@
+[
+  { "id": "cell_lysate",       "name": "Cell Lysate",        "noiseFactor": 0.15 },
+  { "id": "tissue_homogenate", "name": "Tissue Homogenate",  "noiseFactor": 0.25 },
+  { "id": "serum_plasma",      "name": "Serum/Plasma",       "noiseFactor": 0.20 }
+]
